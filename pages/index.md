@@ -18,7 +18,10 @@ title: Welcome to Evidence
     data={categories} 
     name=category_button_group
     value=category
+    defaultValue="Sinister Toys"
 />
+
+
 
 ```sql filtered_query
 select 
