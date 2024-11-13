@@ -14,6 +14,11 @@ title: Welcome to Evidence
   group by category
 ```
 
+```sql filtered_year
+    select distinct EXTRACT(year from order_datetime) as years
+    from needful_things.orders
+```
+
 <ButtonGroup
     data={categories} 
     name=category_button_group
@@ -42,16 +47,9 @@ group by all
 />
 
 
-<Dropdown data={categories} name=category value=category>
-    <DropdownOption value="%" valueLabel="All Categories"/>
-</Dropdown>
+<Dropdown data={categories} name=category value=category/>
 
-<Dropdown name=year>
-    <DropdownOption value=% valueLabel="All Years"/>
-    <DropdownOption value=2019/>
-    <DropdownOption value=2020/>
-    <DropdownOption value=2021/>
-</Dropdown>
+<Dropdown data={filtered_year} name=year value=years/>
 
 ```sql orders_by_category
   select 
